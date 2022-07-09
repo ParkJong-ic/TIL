@@ -1,0 +1,9 @@
+버전 관리
+git 초기화(initialize, init)
+add / staging
+commit(커밋)
+commit 내역(history)
+push
+pull
+clone
+tracking
