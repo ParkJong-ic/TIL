@@ -1,0 +1,73 @@
+1. integer.parselnt(x) : 매개변수로 객체를 필요로 할 때, 기본형 값이 아닌 객체로 저장해야할 때, 객체 간 비교가 필요할 때
+   ex) String s = "102";
+        Integer.parseInt(s) = 102  -> 문자열 안의 숫자를 숫자로 변환하는 함수
+       -> Byte.parseByte();
+           Short.parseShort();
+           Integer.parseInt();
+           Long.parseLong();           int뿐만 아니라 byte, short, long, float, double 등 숫자와 관련된 타입은 전부 가능하다.
+           Float.parseFloat();
+           Double.parseDouble();
+
+2. int[] arr = new int[];  ->  타입[] 변수이름 = new 타입[길이];  ->  int[] arr = new int[5] -> int[] arr = new int[]{a,b,c,d,e};
+
+3. 2차원 배열   ->   int[][] score = new int[4][3];   //  4행 3열의 2차원 배열을 생성한다.
+   ex)    국어 영어 수학
+       1 |  50   40   80
+       2 |  70   60   60
+       3 |  60   80   40
+       4 |  20   30   10
+
+  2차원 배열의 초기화
+  ex) int[][] arr = { {1, 2, 3}, {4, 5, 6} }; -> int[][] arr = {   {1, 2, 3}
+                                                                      {4, 5, 6} };   -> 보기 좀 더 편함
+
+  2차원 배열인 경우 2중 반복문을 쓴다.(한 행을 반복하고 한 열을 반복한다.)
+  ex) int[][] score = { { 100, 100, 100 }
+                          { 20, 20, 20 }
+                          { 30, 30, 30 }
+                          { 40, 40, 40 } };
+      int sum = 0;
+      for (int i = 0l i < score.length; i++) {
+            for (int j = 0; j < score[0].length; j++) {
+                  System.out.printf("score[%d][%d]=%d%n", i, j, score[i][j]); -> printf가 이해가 안 됨;
+
+4. split() : 지정한 문자를 기준으로 문자열을 잘라 배열호 반환한다.
+   ex) String str = "A, B, C, D";
+        String[] array = str.split(","); -> String str = "ABCD"
+
+5. indexOf() : 대상 문자열에서 찾고자 하는 문자의 index값을 찾고 싶을 때
+   indexOf(String str) : 대상문자열에 인자값으로 주어지는 String값이 있는지 검색합니다.
+   indexOf(char ch) : 대상문자열에 인자값으로 주어지는 char값이 있는지 검색합니다.
+   indexOf(String str, int fromIndex) : 대상문자열에 첫번째 인자값으로 주어지는 String값이 있는지 두번째 인자갑의 index부터 검색합니다.
+   indexOf(char ch, int fromIndex) : 대상문자열에 첫번째 인자값으로 주어지는 char값이 있는지 두번째 인자값의 index부터 감색합니다.
+
+   contains() : 대상 문자열에서 찾고자 하는 문자열이 포함되어있는지 여부를 알고 싶을 때
+   matches() : 대상 문자열에서 정규표현식(숫자, 영문자, 한글)등이 포함되어있는지 여부를 알고 싶을 때
+
+6. String(char[] value) : 주어진 문자열(value)을 갖는 String인스턴스를 생성한다.
+   ex) char[] c = {'H', 'e', 'l', 'l', 'o'};
+        String s = new String(c);  ->  s = "Hello"
+
+   String(StringBuffer buf) : StfingBuffer인스턴스가 갖고 있는 문자열과 같은 내용의 String인스턴스를 생성한다.
+   ex) StringBuffer sb = new StringBuffer
+        String s = new String(sb); -> s = "Hello"
+
+   String.colueOf(x) -> 안에 있는 x가 스트링으로 바뀜
+
+   char charAt(int index) : 지정된 위치에 있는 문자 하나를 알려준다.(index는 0부터 시작)
+   ex) String s = "Hello";
+        String n = "0123456";
+        char c = s.charAt(1);
+        char c2 = n.charAt(1);  -> c = 'e', c2 = '1'
+
+   String concat(String str) : 문자열(str)을 뒤에 덧붙인다.
+   ex) String s = "Hello";
+        String s2 = s.concat(" World"); -> s2="Hello World"
+ 
+
+
+
+
+
+
+

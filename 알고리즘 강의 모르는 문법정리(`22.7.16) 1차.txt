@@ -35,7 +35,7 @@ next() 메소드는 스페이스 즉 공백 전까지 입력받은 문자열을 
    ex) public int solution(String s)
         return Integer.parseInt(s);
 
-9. int 배열 ( 상단에 imort java.util.Arrays; 를 적어야 됨)
+9. int 배열 ( 상단에 import java.util.Arrays; 를 적어야 됨)
    ex) int[] intArray = new int[] {1, 2, 3, 4, 5} -> (선언과 동시에 할당) or = new int[5] (선언만 한 것)
         System.out.println(Arrarys.toString(intArray));
 
