@@ -1,0 +1,74 @@
+테이블 -> 도메인, SQL -> Repository
+
+ @ 붙은 걸 어노테이션이라고 한다.
+ -> 스프링에게 어떠어떠한 역할이 있다고 알려주는 것
+
+
+1. 개별 과제 Bus or Taxi와 비슷한 클래스
+
+ @Entity : 데이터베이스 기준으로 테이블 역할을 할 클래스
+
+ @NoArgsConstructor : 기본 생성자를 자동을 넣어주는 것
+ (Args - 파라미터, 재료)
+
+ @Column(열) : 데이터베이스테이블의 Column(열)이 된다는 표시 
+
+ nullable : null이 될 수 있냐 아니냐의 판단
+
+ @id : id를 식별자 삼겠다
+
+ @GeneratedaValue(strategy = GenerationType.AUTO)
+ 아이디가 생성되는 방법이 자동으로 증가하도록 하는 것
+
+ 인터페이스 : 클래스에서 맴버가 빠진, 메소드 모음집
+
+ public class 파일명 extends Timestamped : Timestamped를 상속 받는다.
+ (어떤 파일의 생성일자와 수정일자는 필수이므로 항상 들어가야 된다.)
+
+ update
+
+2. Timestamped
+
+ abstract(추상 메소드) : 직접 구현이 안 되고 상속으로만 쓸 수 있다
+
+  @EntityListeners(AuditingEntityListener.class)
+  Entituy -> 기본 클래스 같은 테이블
+  Listeners -> 주시하다
+  AuditingEntityListener.class -> 수정하면 자동으로 반영
+  -> 기본 클래스 같은 테이블을 주시하다가 수정하면 자동으로 반영
+
+  @MappedSuperclass 이 클래스를 상속을 하면 맴버 변수가 있을 텐데 그것도 컬럼으로 인식을 해줘라
+
+3. 메인 클래스(Application)
+
+ JPA를 Repository로 상속 받아 메소드를 사용하는데 전부 다 찾고 싶으면 repository.findAll();
+                                                               특정 id를 찾고 싶으면 findByid();
+ findAll로 전부 찾을 경우 JPA리턴 타입이 여러 개가 순서대로 오는 것이므로 List<파일명> 파일명List = repository.findAll();
+
+ @EnableJpaAuditing : 생성일자와 수정일자가 변하면 자동으로 업데이트를 해준다.
+
+ update 추가
+
+ 삭제하는 방법 : 파일명Repository.deleteAll();
+
+ 4. Service
+
+ @Service : 이 클래스는 서비스라는 것을 알려줌
+
+ private final 파일명Repository 파일명Repository; : 서비스에서 Repository로 넘겨줘야 되기 때문에 필요
+
+ public Long update(Long id, 파일명RequestDto requestDto) {
+ 파일명 파일명1 = 파일명Repository.findById(id).orElseThrow(
+ () -> new IllegalArgumentException("해당 아이디가 존재하지 않습니다."));
+ 파일명1.update(requestDto);
+ return 파일명1.getId();
+ }
+ 아이디를 확인하고 업데이트 할 데이터를 데이터를 파일명에서 불러와 업데이트한다.
+ (때문에 파일명에도 업데이트가 들어가야된다.)
+
+ @RequiredArgsConstructor : Service에서 필요한 Repository 생성자를 생성
+
+
+
+
+

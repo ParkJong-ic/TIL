@@ -45,8 +45,9 @@
 
    int lastlndexOf(Object o) : 객체가 몇 번째에 저장되어있는지 찾는 것, 오른쪽부터 왼쪽순으로 찾음(못찾으면 -1을 반환)
    boolean contains(Object o) : 지정된 객체가 있는지(있으면 ture, 없으면 flase)
-   ex) for(int i = list1.size()-1; i >= 0; i--) { if(lsit1.contains(list2.get(i))) list2.remove(i); } print(list1, list2);
+   ex) for(int i = list1.size()-1; i >= 0; i--) { if(list1.contains(list2.get(i))) list2.remove(i); } print(list1, list2);
         -> list1에서 list2에 있는 것들을 차례로 삭제
+
    object get(int index) : 특정 위치의 객체 반환
    object set(int index, Object element) : index에 있는 객체를 element로 변경
    ex) list[0, 2, 4, A, B, C] 일 때, list.set(3, "AA") 를 추가하면 -> list[0, 2, 4, AA, B, C] 로 변함
