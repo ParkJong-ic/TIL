@@ -1,0 +1,11 @@
+Restful API
+
+1. HTTP를 이용해서 기계들이 통신을 할 때, HTTP가 가진 잠재력을 최대한 이용 할 수 있도록 유도하기 위한 모범사례
+
+2. 나 이외의 다른 사람이 보고 귑세 이해 할 수 있도록 하는 하나의 형식
+
+Bean
+
+1. Spring IoC Container가 관리하는 객체
+
+Container -> 어노테이션
