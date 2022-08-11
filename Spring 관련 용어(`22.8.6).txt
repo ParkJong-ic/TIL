@@ -28,10 +28,21 @@ MultipartFile
 IOException(예외처리 - 아직 모름)
 
 @RequestParam
-@PostMapping에서 @RequestParam을 써서 받을 수 있는 것은 HTML Form 태크에서 method가 POST 전송
+@PostMapping에서 @RequestParam을 써서 받을 수 있는 것은 HTML Form 태그에서 method가 POST 전송
 일때는 @RequestParam으로 값을 받을 수 있다.
 
 try catch문(catch(x) )
 try 안에 있는 부분을 실행을 하고 x가 실행이 되면 catch 안에 부분을 실행하라
 
-ExceptionHandler
+@ExceptionHandler
+Controller계층에서 발생하는 에러를 잡아서 메서드로 처리해주는 기능(Service, Repository는 제외)
+value 값으로 어떤 Exception을 처리 할 것인지 넘겨줄 수 있는데, value를 설정하지 않으면 모든 Exception을 잡게 되기 때문에
+Exception을 구체적으로 적어주는 것이 좋다고 한다.
+ex) @ExceptionHandler({FileSystemException.class, RemoteException.class})
+    public ResponseEntity<String> handle(Exception ex)
+
+@OneToONE
+
+OntToMany
+
+manyToOne
